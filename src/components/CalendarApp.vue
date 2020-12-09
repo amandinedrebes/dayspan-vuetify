@@ -111,7 +111,7 @@
 
       <slot name="menuRight"></slot>
     </v-app-bar>
-    <v-content class="ds-expand">
+    <v-main class="ds-expand">
       <v-container fluid fill-height class="ds-calendar-container">
         <ds-gestures @swipeleft="next" @swiperight="prev">
           <div v-if="currentType.schedule" class="ds-expand">
@@ -225,7 +225,7 @@
 
         <slot name="containerInside" v-bind="{events, calendar}"></slot>
       </v-container>
-    </v-content>
+    </v-main>
   </div>
 </template>
 
