@@ -26,7 +26,7 @@
                 ></ds-calendar-event-popover>
             </template>
 
-            <template slot="eventCreatePopover" slot-scope="{placeholder, calendar, close}">
+            <template slot="eventCreatePopover" slot-scope="{placeholder, calendar}">
                 <ds-calendar-event-create-popover
                         :calendar-event="placeholder"
                         :calendar="calendar"
