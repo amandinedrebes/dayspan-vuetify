@@ -319,6 +319,9 @@ export default {
     }
   },
 
+  created() {
+    this.drawer = this.navDrawer
+  },
   data: vm => ({
     drawer: false,
     optionsVisible: false,
@@ -329,9 +332,6 @@ export default {
   }),
 
   watch: {
-    navDrawer: function(val) {
-      this.drawer = val;
-    },
     events: "applyEvents",
     calendar: "applyEvents"
   },

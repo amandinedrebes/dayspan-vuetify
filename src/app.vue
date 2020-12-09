@@ -2,6 +2,7 @@
     <v-app id="dayspan" v-cloak>
 
         <ds-calendar-app ref="app"
+                        :nav-drawer="nav"
                          :calendar="calendar"
                          :read-only="readOnly"
                          @change="saveState">
@@ -85,6 +86,7 @@ export default {
         storeKey: 'dayspanState',
         calendar: Calendar.months(),
         readOnly: false,
+        nav: true,
         currentLocale: vm.$dayspan.currentLocale,
         locales: [
             {value: 'en', text: 'English'},
@@ -272,6 +274,7 @@ export default {
     }),
     mounted () {
         window.app = this.$refs.app
+        this.nav = true
         this.loadState()
     },
     methods:
