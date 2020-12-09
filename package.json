@@ -1,5 +1,5 @@
 {
-  "name": "dayspan-vuetify-2",
+  "name": "custom-dayspan-vuetify-2",
   "version": "0.2.0",
   "private": false,
   "main": "src/plugin.js",
@@ -23,5 +23,21 @@
     "vue-cli-plugin-vuetify": "^2.0.8",
     "vue-template-compiler": "^2.6.10",
     "vuetify-loader": "^1.6.0"
-  }
+  },
+  "description": "Support for Vuetify2+ ## Usage",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandinedrebes/dayspan-vuetify.git"
+  },
+  "keywords": [
+    "dayspan",
+    "vuetify",
+    "custom"
+  ],
+  "author": "Amandine Drebes",
+  "bugs": {
+    "url": "https://github.com/amandinedrebes/dayspan-vuetify/issues"
+  },
+  "homepage": "https://github.com/amandinedrebes/dayspan-vuetify#readme",
+  "license": "ISC"
 }
