@@ -1,4 +1,4 @@
-import { Schedule, Functions as fn } from 'dayspan'
+import { Schedule, Functions as fn } from 'custom-dayspan'
 
 // required: property
 

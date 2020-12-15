@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { Calendar, CalendarEvent, Functions as fn } from 'dayspan'
+import { Calendar, CalendarEvent, Functions as fn } from 'custom-dayspan'
 
 export default {
 

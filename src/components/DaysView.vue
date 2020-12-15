@@ -24,7 +24,8 @@
 
                             <div class="ds-hour"
                                  v-for="(hour, i) in hours"
-                                 :class="hourClasses[ i ]">
+                                 :class="hourClasses[ i ]"
+                                 :key="i">
 
                                 <div class="ds-hour-text">{{ hour }}</div>
 
@@ -59,7 +60,7 @@
 </template>
 
 <script>
-import { Calendar, CalendarEvent, Constants } from 'dayspan'
+import { Calendar, CalendarEvent, Constants } from 'custom-dayspan'
 
 export default {
 

@@ -44,9 +44,9 @@
 
         <div v-if="!allDay">
 
-            <div class="ds-time-row" v-for="(time, index) in schedule.times">
+            <div class="ds-time-row" v-for="(time, index) in schedule.times" :key="index">
 
-                <div class="ds-time-cell"></div>
+                <div class="ds-time-cell padded"></div>
 
                 <ds-schedule-time
                         class="ds-time-cell double"
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import { Time, Schedule, Functions as fn } from 'dayspan'
+import { Time, Schedule, Functions as fn } from 'custom-dayspan'
 
 export default {
 
@@ -243,10 +243,15 @@ export default {
 
         .ds-time-row {
             display: flex;
+            margin-top: 8px;
 
             .ds-time-cell {
                 padding-right: 8px;
                 flex: 1 0 0px;
+
+                &.padded {
+                    padding-right: 3px;
+                }
 
                 &.double {
                     padding-right: 16px;

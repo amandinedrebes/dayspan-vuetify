@@ -1,4 +1,4 @@
-import { Functions as fn } from 'dayspan'
+import { Functions as fn } from 'custom-dayspan'
 
 export function dsMerge (target, source) {
     if (!fn.isObject(target)) {

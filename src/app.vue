@@ -78,8 +78,8 @@
 
 <script>
 import { dsMerge } from './functions'
-import { Calendar, Weekday, Month, Sorts } from 'dayspan'
-import * as moment from 'moment'
+import { Calendar, Weekday, Month, Sorts } from 'custom-dayspan'
+
 export default {
     name: 'dayspan',
     data: vm => ({
@@ -92,8 +92,7 @@ export default {
             {value: 'en', text: 'English'},
             {value: 'fr', text: 'French'},
             {value: 'de', text: 'German'},
-            {value: 'nl', text: 'Dutch'},
-            {value: 'ca', text: 'Catalan'}
+            {value: 'nl', text: 'Dutch'}
         ],
         defaultEvents: [
             {
@@ -293,8 +292,8 @@ export default {
                 return (sa === ea) ? (sh + ' - ' + eh + ea) : (sh + sa + ' - ' + eh + ea)
             },
             setLocale (code) {
-                moment.locale(code)
-                this.$dayspan.setLocale(code)
+                let res = this.$dayspan.setLocale(code)
+                console.log('==== try to set local to ', code, res)
                 this.$dayspan.refreshTimes()
                 this.$refs.app.$forceUpdate()
             },

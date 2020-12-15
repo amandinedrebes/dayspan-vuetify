@@ -16,12 +16,6 @@ export default {
     placeholder: {
         noTitle: "(başlık eklenmemiş)"
     },
-    patterns: {
-        lastDay: day => "Ayın son günü",
-        lastDayOfMonth: day => "Ayın son günü " + day.format("MMMM"),
-        lastWeekday: day =>
-            "Son " + day.format("dddd") + " in " + day.format("MMMM")
-    },
     colors: [
         {text: "Red"},
         {text: "Pink"},

@@ -11,9 +11,10 @@
 
         <div class="ds-hour"
              v-for="h in 24"
-             @click.stop="addAt( h )"></div>
+             @click.stop="addAt( h )"
+             :key="h"></div>
 
-        <template v-for="(event, i) in day.events">
+        <template v-for="event in day.events">
 
             <ds-calendar-event-time
                     v-if="isVisible( event )"
@@ -47,7 +48,7 @@
 </template>
 
 <script>
-import { Constants, CalendarDay, CalendarEvent, Calendar, DaySpan, Functions as fn } from 'dayspan'
+import { Constants, CalendarDay, CalendarEvent, Calendar, DaySpan, Functions as fn } from 'custom-dayspan'
 
 export default {
 

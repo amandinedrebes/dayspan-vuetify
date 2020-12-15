@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { ScheduleModifier, Functions as fn } from 'dayspan'
+import { ScheduleModifier, Functions as fn } from 'custom-dayspan'
 
 export default {
 

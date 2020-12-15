@@ -110,7 +110,7 @@
 </template>
 
 <script>
-import { Day, Time, Schedule, Calendar, CalendarEvent, Functions as fn } from 'dayspan'
+import { Day, Time, Schedule, Calendar, CalendarEvent, Functions as fn } from 'custom-dayspan'
 
 export default {
 

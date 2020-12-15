@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { CalendarEvent, Calendar, Day } from 'dayspan'
+import { CalendarEvent, Calendar, Day } from 'custom-dayspan'
 
 export default {
 

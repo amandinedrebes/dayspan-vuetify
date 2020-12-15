@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { CalendarEvent, Calendar, Day, Functions as fn } from 'dayspan'
+import { CalendarEvent, Calendar, Day, Functions as fn } from 'custom-dayspan'
 
 export default {
 
@@ -105,7 +105,7 @@ export default {
             },
 
             sameDayEvents () {
-                return this.calendarEvent.event.schedule.iterateSpans(this.calendarEvent.day, true).list()
+                return this.calendarEvent.event.schedule.iterateSpans(this.calendarEvent.day, true).array()
             },
 
             hasPrefix () {

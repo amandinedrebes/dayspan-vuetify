@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { DaySpan, Calendar, Functions as fn } from 'dayspan'
+import { DaySpan, Calendar, Functions as fn } from 'custom-dayspan'
 
 export default {
 

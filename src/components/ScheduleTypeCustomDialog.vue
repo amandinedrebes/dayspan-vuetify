@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { Schedule, Functions as fn } from 'dayspan'
+import { Schedule, Functions as fn } from 'custom-dayspan'
 
 export default {
 

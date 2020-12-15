@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { Day, Schedule } from 'dayspan'
+import { Day, Schedule } from 'custom-dayspan'
 
 export default {
 

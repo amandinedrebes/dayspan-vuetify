@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { Suffix } from 'dayspan'
+import { Suffix } from 'custom-dayspan'
 import { default as ScheduleFrequency } from './ScheduleFrequency'
 
 export default {

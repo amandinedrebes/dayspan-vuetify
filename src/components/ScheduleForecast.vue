@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { Day, Schedule, Functions as fn } from 'dayspan'
+import { Day, Schedule, Functions as fn } from 'custom-dayspan'
 
 export default {
 
@@ -124,10 +124,8 @@ export default {
 
             forecast () {
                 return this.schedule.forecast(this.aroundDay, false, this.size)
-                .map(function (spanDayId) {
-                    return spanDayId[1]
-                })
-                .list()
+                .transform(([span, day, id]) => day)
+                .array()
 
             },
 

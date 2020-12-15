@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { Time, Functions as fn } from 'dayspan'
+import { Time, Functions as fn } from 'custom-dayspan'
 
 export default {
 

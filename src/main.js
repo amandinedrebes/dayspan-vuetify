@@ -12,12 +12,13 @@ import de from './locales/de'
 import ca from './locales/ca'
 import nl from './locales/nl'
 
-import 'moment/locale/fr'
-import 'moment/locale/ca'
-import 'moment/locale/nl'
-import * as moment from 'moment'
 
-moment.locale('en')
+import {
+    en as ds_en,
+    fr as ds_fr,
+    nl as ds_nl
+  } from 'custom-dayspan'
+
 
 Vue.config.productionTip = false
 

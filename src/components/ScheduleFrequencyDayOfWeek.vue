@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { Weekday, Functions as fn } from 'dayspan'
+import { Weekday, Functions as fn } from 'custom-dayspan'
 import { default as ScheduleFrequency } from './ScheduleFrequency'
 
 export default {

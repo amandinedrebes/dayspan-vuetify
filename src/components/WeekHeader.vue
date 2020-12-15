@@ -9,6 +9,7 @@
             <ds-week-day-header
                     v-bind="{$scopedSlots}"
                     v-on="$listeners"
+                    :key="day"
                     :day="day"
                     :calendar="calendar"
                     :placeholder="placeholder"
@@ -22,7 +23,7 @@
 </template>
 
 <script>
-import { CalendarDay, Calendar, CalendarEvent } from 'dayspan'
+import { CalendarDay, Calendar, CalendarEvent } from 'custom-dayspan'
 
 export default {
 

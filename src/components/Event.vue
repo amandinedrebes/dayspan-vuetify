@@ -148,7 +148,7 @@
                                 <!-- Calendar -->
                                 <slot name="eventDetailsCalendar" v-bind="slotData">
                                     <v-text-field v-if="$dayspan.supports.calendar"
-                                                  single-line hide-details solo flat readonly
+                                                  single-line hide-details solo flat
                                                   prepend-icon="event"
                                                   :label="labels.calendar"
                                                   :readonly="isReadOnly"
@@ -211,7 +211,7 @@
                     </v-tab-item>
 
                     <!-- Forecast -->
-                    <v-tab-item value="forecast" lazy v-if="showForecast">
+                    <v-tab-item value="forecast" v-if="showForecast">
                         <v-card flat>
                             <v-card-text>
                                 <slot name="eventForecast" v-bind="slotData">
@@ -228,7 +228,7 @@
                     </v-tab-item>
 
                     <!-- Exclusions -->
-                    <v-tab-item value="exclusions" lazy v-if="showExclusions">
+                    <v-tab-item value="exclusions" v-if="showExclusions">
                         <v-card flat>
                             <v-card-text>
                                 <slot name="eventExclusions" v-bind="slotData">
@@ -245,7 +245,7 @@
                     </v-tab-item>
 
                     <!-- Inclusions -->
-                    <v-tab-item value="inclusions" lazy v-if="showInclusions">
+                    <v-tab-item value="inclusions" v-if="showInclusions">
                         <v-card flat>
                             <v-card-text>
                                 <slot name="eventInclusions" v-bind="slotData">
@@ -262,7 +262,7 @@
                     </v-tab-item>
 
                     <!-- Cancelled -->
-                    <v-tab-item value="cancelled" lazy v-if="showCancels">
+                    <v-tab-item value="cancelled" v-if="showCancels">
                         <v-card flat>
                             <v-card-text>
                                 <slot name="eventCancels" v-bind="slotData">
@@ -288,7 +288,7 @@
 </template>
 
 <script>
-import { Day, Calendar, CalendarEvent, Schedule, Functions as fn } from 'dayspan'
+import { Day, Calendar, CalendarEvent, Schedule, Functions as fn } from 'custom-dayspan'
 
 export default {
 

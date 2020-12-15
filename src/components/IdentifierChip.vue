@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { Identifier } from 'dayspan'
+import { Identifier } from 'custom-dayspan'
 
 export default {
 

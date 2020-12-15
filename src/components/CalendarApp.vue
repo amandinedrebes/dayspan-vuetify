@@ -242,7 +242,7 @@ import {
   PatternMap,
   Time,
   Op
-} from "dayspan";
+} from "custom-dayspan";
 
 export default {
   name: "dsCalendarApp",

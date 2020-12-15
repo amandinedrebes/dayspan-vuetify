@@ -154,7 +154,7 @@
 </template>
 
 <script>
-import { CalendarEvent, Calendar, Pattern } from 'dayspan'
+import { CalendarEvent, Calendar, Pattern } from 'custom-dayspan'
 
 export default {
 

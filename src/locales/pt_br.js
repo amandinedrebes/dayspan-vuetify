@@ -15,11 +15,6 @@ export default {
     placeholder: {
         noTitle: '(Sem título)'
     },
-    patterns: {
-        lastDay: (day) => 'Último dia do mês',
-        lastDayOfMonth: (day) => 'Último dia de' + day.format('MMMM'),
-        lastWeekday: (day) => 'Último ' + day.format('dddd') + ' em ' + day.format('MMMM')
-    },
     colors: [
         {text: 'Vermelho'},
         {text: 'Rosa'},

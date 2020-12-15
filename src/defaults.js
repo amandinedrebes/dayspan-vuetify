@@ -1,4 +1,4 @@
-import { Units } from 'dayspan'
+import { Units } from 'custom-dayspan'
 
 const LOCALE_ENTRY = 0
 

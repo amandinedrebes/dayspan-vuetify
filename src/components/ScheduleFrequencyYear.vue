@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { Day } from 'dayspan'
+import { Day } from 'custom-dayspan'
 import { default as ScheduleFrequency } from './ScheduleFrequency'
 
 export default {

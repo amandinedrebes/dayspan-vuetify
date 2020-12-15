@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { Calendar, Schedule, CalendarEvent, Units, DaySpan, Day, Op, Functions as fn } from 'dayspan'
+import { Calendar, Schedule, CalendarEvent, Units, DaySpan, Day, Op, Functions as fn } from 'custom-dayspan'
 
 export default {
 
@@ -256,9 +256,9 @@ export default {
                     var min = this.addStart.min(this.addEnd)
                     var max = this.addStart.max(this.addEnd)
 
-                    this.placeholder.day = min.start()
+                    this.placeholder.day = min.startOf('day');
                     this.placeholder.time.start = min
-                    this.placeholder.time.end = max.end()
+                    this.placeholder.time.end = max.endOf('day');
                     this.placeholder.event.schedule = Schedule.forDay(
                         this.placeholder.start,
                         this.placeholder.time.days(Op.UP)
@@ -274,7 +274,7 @@ export default {
 
                     this.placeholder.day = day
                     this.placeholder.time.start = day
-                    this.placeholder.time.end = day.next(this.placeholder.schedule.durationInDays).end()
+                    this.placeholder.time.end = day.next(this.placeholder.schedule.durationInDays).endOf('day');
 
                     this.updatePlaceholderRow(this.placeholder)
                 }
@@ -289,9 +289,9 @@ export default {
                     var min = this.addStart.min(this.addEnd)
                     var max = this.addStart.max(this.addEnd)
 
-                    this.placeholder.day = min.start()
+                    this.placeholder.day = min.startOf('day');
                     this.placeholder.time.start = min
-                    this.placeholder.time.end = max
+                    this.placeholder.time.end = max.endOf('day');
                     this.placeholder.event.schedule = Schedule.forSpan(this.placeholder.time)
                 }
 
@@ -366,7 +366,7 @@ export default {
             updatePlaceholderRow (placeholder) {
                 let row = 0
 
-                this.calendar.iterateDays().iterate((day) => {
+                this.calendar.iterateDays().each((day) => {
                     if (placeholder.time.matchesDay(day)) {
                         row = day.iterateEvents().reduce(
                             row,
@@ -384,7 +384,7 @@ export default {
                 let time = placeholder.time
 
                 if (fullDay) {
-                    time.end = time.end.end()
+                    time.end = time.end.endOf('day');
 
                     placeholder.event.schedule = Schedule.forDay(time.start)
                     placeholder.fullDay = true
