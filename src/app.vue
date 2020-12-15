@@ -292,8 +292,7 @@ export default {
                 return (sa === ea) ? (sh + ' - ' + eh + ea) : (sh + sa + ' - ' + eh + ea)
             },
             setLocale (code) {
-                let res = this.$dayspan.setLocale(code)
-                console.log('==== try to set local to ', code, res)
+                this.$dayspan.setLocale(code)
                 this.$dayspan.refreshTimes()
                 this.$refs.app.$forceUpdate()
             },

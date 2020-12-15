@@ -166,7 +166,6 @@
                                               :disabled="isReadOnly"
                                               v-model="details.color">
                                         <template slot="item" slot-scope="{ item }">
-                                            <v-lis
                                             <v-list-item-content>
                                                 <div class="ds-color-option" :style="{backgroundColor: item.value}" v-text="item.text"></div>
                                             </v-list-item-content>
@@ -506,6 +505,7 @@ export default {
             },
 
             isReadOnly () {
+                 console.log('==== readonly', this.readOnly || this.$dayspan.readOnly)
                 return this.readOnly || this.$dayspan.readOnly
             }
         },
@@ -537,24 +537,31 @@ export default {
                         ev.created = this.$dayspan.createEvent(ev.details, ev.schedule)
 
                         if (ev.calendar) {
+                            console.log('=== ev.created ', ev.created)
+
+                            console.log('=== ev ', ev)
                             ev.calendar.addEvent(ev.created)
+                            console.log('=== ev added ', ev)
                             ev.added = true
                         }
-
+                        console.log('=== emit created ', ev)
                         this.$emit('create', ev)
                     }
 
                     if (ev.calendar && ev.refresh) {
+                        console.log('=== refreshed? ', ev)
                         ev.calendar.refreshEvents()
                     }
 
                     ev.handled = true
 
                     if (ev.created) {
+                        console.log('=== emit ev.created ', ev)
                         this.$emit('event-create', ev.created)
                     }
                 }
 
+                console.log('=== emit saved ', ev)
                 this.$emit('saved', ev)
             },
 

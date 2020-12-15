@@ -173,6 +173,7 @@ export default {
                 var bounds = this.$el.getBoundingClientRect()
                 var y = ($event.clientY - bounds.y) / bounds.height
                 var millis = Math.round(Constants.MILLIS_IN_DAY * y)
+                console.log('==== get day', this.day)
                 var time = this.day.start().relative(millis)
 
                 if (roundTo) {

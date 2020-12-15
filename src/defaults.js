@@ -96,8 +96,8 @@ export default {
             xs: LOCALE_ENTRY
         },
         labels: {
-            next: LOCALE_ENTRY,
-            prev: LOCALE_ENTRY,
+            next: () => LOCALE_ENTRY,
+            prev: () => LOCALE_ENTRY,
             moveCancel: LOCALE_ENTRY,
             moveSingleEvent: LOCALE_ENTRY,
             moveOccurrence: LOCALE_ENTRY,
@@ -363,7 +363,6 @@ export default {
     dsEventDialog: {
         dialogProps: {
             persistent: true,
-            // lazy: true,
             maxWidth: '800px'
         }
     },
@@ -520,8 +519,7 @@ export default {
     dsScheduleTypeCustomDialog: {
         dialogProps: {
             maxWidth: '600px',
-            persistent: true,
-            // lazy: true
+            persistent: true
         },
         labels: {
             save: LOCALE_ENTRY,

@@ -1,19 +1,13 @@
-import {
-    Day,
-    Constants,
-    Parse,
-    Schedule,
-    DaySpan,
-    CalendarEvent,
-    Pattern,
-    Functions as fn
-} from 'custom-dayspan'
+import * as ds from 'custom-dayspan';
+import Vue from 'vue';
+import { Day, Constants, Parse, Schedule, DaySpan, CalendarEvent, Pattern, Functions as fn } from 'custom-dayspan';
+
 import { default as Defaults } from './defaults'
 import { default as Colors } from './colors'
 import { default as Icons } from './icons'
 import { default as Locales, defaultLocale } from './locales'
 import { dsMerge, dsMergeLocale } from './functions'
-import Vue from 'vue'
+
 import vuetify from './plugins/vuetify'
 
 const LOCALE_ENTRY = 0
@@ -159,6 +153,7 @@ export default {
 
                 this.currentLocale = name
             }
+            ds.Locales.set(name);
         },
 
         addLocale(name, locale) {
@@ -299,7 +294,7 @@ export default {
             if (calendarEvent.fullDay) {
                 when += labels.allDay
             } else {
-                when += schedule.describeArray(schedule.times, x => x.format(formats.time))
+                when += ds.Locales.current.list(schedule.times.map(x => x.format(formats.time)))
             }
 
             if (schedule.duration !== 1 && vuetify.framework.breakpoint.smAndUp) {
