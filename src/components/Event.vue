@@ -505,7 +505,6 @@ export default {
             },
 
             isReadOnly () {
-                 console.log('==== readonly', this.readOnly || this.$dayspan.readOnly)
                 return this.readOnly || this.$dayspan.readOnly
             }
         },
@@ -534,17 +533,12 @@ export default {
 
                         this.$emit('event-update', ev.calendarEvent.event)
                     } else if (ev.create) {
-                        ev.created = this.$dayspan.createEvent(ev.details, ev.schedule)
+                        ev.created = this.$dayspan.createEvent(ev.details, ev.schedule, true)
 
                         if (ev.calendar) {
-                            console.log('=== ev.created ', ev.created)
-
-                            console.log('=== ev ', ev)
-                            ev.calendar.addEvent(ev.created)
-                            console.log('=== ev added ', ev)
+                            ev.calendar.addEvent(ev.created, true, true)
                             ev.added = true
                         }
-                        console.log('=== emit created ', ev)
                         this.$emit('create', ev)
                     }
 
@@ -556,12 +550,10 @@ export default {
                     ev.handled = true
 
                     if (ev.created) {
-                        console.log('=== emit ev.created ', ev)
                         this.$emit('event-create', ev.created)
                     }
                 }
 
-                console.log('=== emit saved ', ev)
                 this.$emit('saved', ev)
             },
 
@@ -585,7 +577,6 @@ export default {
 
             getEvent (type, extra = {}) {
                 return fn.extend({
-
                     type: type,
                     day: this.day,
                     schedule: this.schedule,

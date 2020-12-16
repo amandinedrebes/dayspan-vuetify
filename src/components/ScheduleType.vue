@@ -89,14 +89,6 @@ export default {
                 if (!this.day) {
                     return []
                 }
-                 console.log('=== dayspan',  this.$dayspan)
-                console.log('=== patterns here', Patterns)
-                console.log('=== translate here', Patterns
-                .filter((pattern) => pattern.listed)
-                .map((pattern) => ({
-                    label: pattern.describe(this.day),
-                    value: pattern.name
-                })))
                 return Patterns
                 .filter((pattern) => pattern.listed)
                 .map((pattern) => ({

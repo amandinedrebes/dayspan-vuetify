@@ -9,7 +9,6 @@
             <ds-week-day-header
                     v-bind="{$scopedSlots}"
                     v-on="$listeners"
-                    :key="day"
                     :day="day"
                     :calendar="calendar"
                     :placeholder="placeholder"
