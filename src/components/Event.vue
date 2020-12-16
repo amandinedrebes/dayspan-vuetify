@@ -536,14 +536,13 @@ export default {
                         ev.created = this.$dayspan.createEvent(ev.details, ev.schedule, true)
 
                         if (ev.calendar) {
-                            ev.calendar.addEvent(ev.created, true, true)
+                            ev.calendar.addEvent(ev.created)
                             ev.added = true
                         }
                         this.$emit('create', ev)
                     }
 
                     if (ev.calendar && ev.refresh) {
-                        console.log('=== refreshed? ', ev)
                         ev.calendar.refreshEvents()
                     }
 

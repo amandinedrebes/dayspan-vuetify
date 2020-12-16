@@ -104,7 +104,7 @@ export default {
                     dayOfWeek: [Weekday.MONDAY],
                     times: [9],
                     duration: 30,
-                    durationUnit: 'minutes'
+                    durationUnit: 'minute'
                 }
             },
             {
@@ -116,7 +116,7 @@ export default {
                     weekspanOfMonth: [0],
                     dayOfWeek: [Weekday.FRIDAY],
                     duration: 3,
-                    durationUnit: 'days'
+                    durationUnit: 'day'
                 }
             },
             {
@@ -127,7 +127,7 @@ export default {
                 schedule: {
                     lastDayOfMonth: [1],
                     duration: 1,
-                    durationUnit: 'hours'
+                    durationUnit: 'hour'
                 }
             },
             {
