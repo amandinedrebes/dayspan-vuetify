@@ -302,7 +302,7 @@ export default {
                     time = time.relative(-this.movingEvent.offset)
                     time = this.$dayspan.roundTime(time, this.$dayspan.rounding.drag)
 
-                    this.placeholder.day = time.start()
+                    this.placeholder.day = time.startOf('day')
                     this.placeholder.time.start = time
                     this.placeholder.time.end = time.relative(this.movingDuration)
                 }
