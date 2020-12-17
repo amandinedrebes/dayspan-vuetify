@@ -12,7 +12,7 @@
         <div class="ds-hour"
              v-for="h in 24"
              @click.stop="addAt( h )"
-             :key="h"></div>
+            ></div>
 
         <template v-for="event in day.events">
 
