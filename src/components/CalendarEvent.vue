@@ -27,7 +27,7 @@
             <span v-if="hasPrefix">
               {{ getPrefix }}
             </span>
-            <strong class="ds-ev-title">{{ details.title }}</strong>
+            <strong class="ds-ev-title">{{ displayName }}</strong>
             <span class="ds-ev-description">{{ details.description }}</span>
 
           </slot>
@@ -136,6 +136,14 @@ export default {
 
             details () {
                 return this.calendarEvent.event.data
+            },
+
+            displayName () {
+                let res = this.details.title
+                if (this.details.icon !== ''){
+                    res += ' ' + this.details.icon
+                }
+                return res.trim()
             }
         },
 

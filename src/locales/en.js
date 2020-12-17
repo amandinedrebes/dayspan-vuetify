@@ -13,7 +13,7 @@ export default {
         removeExistingTime: 'Are you sure you want to remove all event occurrences at this time?'
     },
     placeholder: {
-        noTitle: '(no title)'
+        noTitle: 'Disinfection'
     },
     colors: [
         {text: 'Red'},
@@ -39,21 +39,10 @@ export default {
         {text: 'Black'}
     ],
     icons: [
-        {text: 'Alarm'},
-        {text: 'Star'},
-        {text: 'Love'},
-        {text: 'Action'},
-        {text: 'Assignment'},
-        {text: 'Warning'},
-        {text: 'Money'},
-        {text: 'Charge'},
-        {text: 'Home'},
-        {text: 'Play'},
-        {text: 'Email'},
-        {text: 'Phone'},
-        {text: 'Chart'},
-        {text: 'Biking'},
-        {text: 'Travel'}
+        {text: 'Viruses'},
+        {text: 'Viruses & Bacteria'},
+        {text: 'Continue Cycle: Viruses'},
+        {text: 'Continue Cycle: Viruses & Bacteria'}
     ],
     defaults: {
         dsDay: {

@@ -394,7 +394,7 @@ export default {
             buildDetails () {
                 let details = this.$dayspan.copyEventDetails(this.calendarEvent.event.data)
 
-                details.title = ''
+                // details.title = ''
 
                 return details
             },

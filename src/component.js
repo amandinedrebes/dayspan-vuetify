@@ -45,12 +45,12 @@ export default {
         },
 
         supports: {
-            title: true,
-            description: true,
-            color: true,
-            location: true,
-            calendar: true,
-            busy: true,
+            title: false,
+            description: false,
+            color: false,
+            location: false,
+            calendar: false,
+            busy: false,
             icon: true,
             guests: false
         },
@@ -189,7 +189,6 @@ export default {
 
         createEventData(details, schedule) {
             return dsMerge({}, details)
-
         },
 
         createEvent(details, schedule, forPlaceholder) {
@@ -208,7 +207,7 @@ export default {
                 forecolor: '#ffffff',
                 calendar: '',
                 busy: true,
-                icon: ''
+                icon: Icons[0].value
             }
         },
 
@@ -217,7 +216,7 @@ export default {
         },
 
         isValidEvent(details, schedule, calendarEvent) {
-            return !!details.title
+            return !!details.title || !!details.icon
         },
 
         requiresPermission(type) {

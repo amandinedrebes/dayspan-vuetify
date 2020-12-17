@@ -13,7 +13,7 @@ export default {
         removeExistingTime: "Êtes-vous sûr de vouloir supprimer toutes les occurrences d'événements à ce stade ?"
     },
     placeholder: {
-        noTitle: '(pas de titre)'
+        noTitle: 'Désinfection'
     },
     colors: [
         {text: 'Rouge'},
@@ -39,21 +39,10 @@ export default {
         {text: 'Noir'}
     ],
     icons: [
-        {text: 'Alarme'},
-        {text: 'Étoile'},
-        {text: 'Coeur'},
-        {text: 'Action'},
-        {text: 'Affectation'},
-        {text: 'Dangé'},
-        {text: 'Argent'},
-        {text: 'Charge'},
-        {text: 'Accueil'},
-        {text: 'Play'},
-        {text: 'Email'},
-        {text: 'Téléphone'},
-        {text: 'Graphique'},
-        {text: 'Cycliste'},
-        {text: 'Voyage'}
+        {text: 'Virus'},
+        {text: 'Virus & Bactéries'},
+        {text: 'Cycle continu: Virus'},
+        {text: 'Cycle continu: Virus & Bactéries'}
     ],
     defaults: {
         dsDay: {
