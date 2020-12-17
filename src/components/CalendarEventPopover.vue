@@ -33,13 +33,14 @@
                 <v-tooltip bottom v-if="!isReadOnly">
                     <template v-slot:activator="{ on }">
                         <ds-schedule-actions
-                                v-on="on"
+                                v-on="$listeners"
                                 v-bind="{$scopedSlots}"
                                 :schedule="calendarEvent.schedule"
                                 :calendar-event="calendarEvent"
-                                :calendar="calendar">
+                                :calendar="calendar"
+                                @finish="actioned">
 
-                            <v-btn icon :style="styleButton" style="background-color: transparent!important;">
+                            <v-btn icon :style="styleButton" style="background-color: transparent!important;"  v-on="on">
                                 <v-icon>more_vert</v-icon>
                             </v-btn>
 
@@ -288,7 +289,11 @@ export default {
     data: vm => ({}),
 
     methods:
-        {}
+        {
+            actioned (ev) {
+                this.$emit('actioned', ev)
+            },
+        }
 }
 </script>
 
