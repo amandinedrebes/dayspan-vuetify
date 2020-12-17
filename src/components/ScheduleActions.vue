@@ -2,9 +2,9 @@
 
     <v-menu bottom left>
         <template v-slot:activator="{ on }">
-            <template v-on="on">
+            <v-btn v-on="on" icon :style="styleButton" style="background-color: transparent!important;">
                 <slot></slot>
-            </template>
+            </v-btn>
         </template>
 
         <v-list>
@@ -35,7 +35,7 @@
 
             <v-list-item @click="moveStart" v-if="canMove">
                 <v-menu
-                        lazy offset-y full-width
+                        offset-y
                         transition="scale-transition"
                         min-width="290px"
                         color="primary"
@@ -69,7 +69,7 @@
 
             <v-list-item @click="includeStart" v-if="canInclude">
                 <v-menu
-                        lazy offset-y full-width
+                        offset-y
                         transition="scale-transition"
                         min-width="290px"
                         color="primary"
@@ -477,6 +477,16 @@ export default {
                 })
             },
 
+          details () {
+                return this.calendarEvent.event.data
+            },
+
+            styleButton () {
+                return {
+                    color: this.details.forecolor
+                }
+            },
+
             getEvent (type, extra = {}) {
                 return fn.extend({
 
@@ -497,5 +507,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 </style>

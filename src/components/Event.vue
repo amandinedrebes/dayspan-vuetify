@@ -657,6 +657,7 @@ export default {
 
         .ds-event-actions {
             float: right;
+            display: grid;
 
             > * {
                 display: inline-block;
