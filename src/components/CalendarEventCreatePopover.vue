@@ -160,7 +160,8 @@
                             <v-select
                                     single-line hide-details solo flat full-width
                                     :items="$dayspan.icons"
-                                    v-model="details.icon">
+                                    v-model="details.icon"
+                                    v-on:change="onChangeIcon">
                                 <template slot="item" slot-scope="{ item }">
                                     <v-list-item-avatar>
                                         <v-icon>{{ item.value }}</v-icon>
@@ -338,9 +339,24 @@ export default {
     data: vm => ({
         details: vm.buildDetails()
     }),
-
     methods:
         {
+            onChangeIcon (){
+              switch (this.details.icon) {
+                case 'virus':
+                    this.details.color = "#F44336"
+                    break
+                case 'bacteria':
+                    this.details.color = "#607D8B"
+                    break
+                case 'continu_virus':
+                    this.details.color = "#FFEB3B"
+                    break
+                case 'continu_bacteria':
+                    this.details.color = "#00BCD4"
+                    break
+              }
+            },
             edit () {
                 var ev = this.getEvent('create-edit')
 
