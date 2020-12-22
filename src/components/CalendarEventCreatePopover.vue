@@ -340,6 +340,13 @@ export default {
     data: vm => ({
         details: vm.buildDetails()
     }),
+    mounted (){
+        // Set default duration to be consistent with default icon selection for virus
+        this.calendarEvent.fullDay = false
+        this.calendarEvent.schedule.durationUnit = "hour"
+        this.calendarEvent.schedule.duration = 1
+        this.calendarEvent.schedule.times = [1]
+    },
     methods:
         {
             onChangeIcon (){
