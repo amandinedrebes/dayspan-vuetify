@@ -492,7 +492,7 @@ export default {
     },
 
     dsScheduleTimes: {
-        defaultTime: '08:00',
+        defaultTime: '01:00',
         labels: {
             all: LOCALE_ENTRY,
             minute: LOCALE_ENTRY,

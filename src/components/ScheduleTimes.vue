@@ -144,7 +144,8 @@ export default {
         {
             schedule: {
                 handler: 'updateAllDay',
-                immediate: true
+                immediate: true,
+                deep: true
             },
             allDay: 'updateScheduleAllDay'
         },

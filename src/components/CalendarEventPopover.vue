@@ -118,6 +118,19 @@
                     </v-list-item-content>
                 </v-list-item>
 
+                <v-list-item v-if="details.icon">
+                    <v-list-item-avatar>
+                        <v-icon>coronavirus</v-icon>
+                    </v-list-item-avatar>
+                    <v-list-item-content>
+                        <slot name="eventPopoverNotifications" v-bind="slotData">
+                            <v-list-item-title>
+                                <span v-html="details.icon"></span>
+                            </v-list-item-title>
+                        </slot>
+                    </v-list-item-content>
+                </v-list-item>
+
                 <v-list-item v-if="details.calendar">
                     <v-list-item-avatar>
                         <v-icon>event</v-icon>

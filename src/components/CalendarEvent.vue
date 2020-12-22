@@ -22,18 +22,19 @@
                     v-if="hasIcon"
                     size="14"
                     :style="{color: details.forecolor}">
-              {{ details.icon }}
+              <!-- {{ details.icon }} -->
+              coronavirus
             </v-icon>
             <span v-if="hasPrefix">
               {{ getPrefix }}
             </span>
             <strong class="ds-ev-title">{{ displayName }}</strong>
-            <span class="ds-ev-description">{{ details.description }}</span>
+            <!-- <span class="ds-ev-description">{{ details.description }}</span> -->
 
           </slot>
         </span>
 
-                    <span v-else>
+        <span v-else>
           <slot name="eventEmpty" v-bind="{calendarEvent, details}">&nbsp;</slot>
         </span>
 

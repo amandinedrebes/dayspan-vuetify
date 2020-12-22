@@ -1,6 +1,6 @@
 import * as ds from 'custom-dayspan';
 import Vue from 'vue';
-import { Day, Constants, Parse, Schedule, DaySpan, CalendarEvent, Pattern, Functions as fn } from 'custom-dayspan';
+import { Day, Constants, Parse, Schedule, Time, DaySpan, CalendarEvent, Pattern, Functions as fn } from 'custom-dayspan';
 
 import { default as Defaults } from './defaults'
 import { default as Colors } from './colors'
@@ -203,12 +203,20 @@ export default {
                 title: '',
                 description: '',
                 location: '',
-                color: this.getDefaultEventColor(),
+                color: "#F44336",
                 forecolor: '#ffffff',
                 calendar: '',
-                busy: true,
+                busy: null,
                 icon: Icons[0].value
             }
+        },
+
+        getDefaultEventSchedule () {
+            return new Schedule({
+                duration: 1,
+                durationUnit: 'hour',
+                times: [Time.parse("01:00")]
+            })
         },
 
         getDefaultEventColor() {
@@ -321,7 +329,7 @@ export default {
 
         getPlaceholderEventForAdd(time) {
             let details = this.getPlaceholderEventDetails()
-            let schedule = new Schedule({})
+            let schedule = this.getDefaultEventSchedule()
             let id = time.timeIdentifier
             let event = this.createEvent(details, schedule, true)
             let span = DaySpan.point(time)

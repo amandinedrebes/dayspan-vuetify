@@ -44,7 +44,6 @@
 
                 <!-- More Actions -->
                 <slot name="scheduleActions" v-bind="{calendarEvent, schedule, calendar, actioned, readOnly}">
-
                     <ds-schedule-actions
                             v-if="calendarEvent && !isReadOnly"
                             v-bind="{$scopedSlots}"
@@ -78,7 +77,6 @@
         </div>
 
         <div class="ds-event-body ds-event-area">
-
             <slot name="schedule" v-bind="slotData">
 
                 <ds-schedule
@@ -86,7 +84,6 @@
                         :day="day"
                         :read-only="readOnly"
                 ></ds-schedule>
-
             </slot>
 
         </div>
@@ -180,7 +177,8 @@
                                               :prepend-icon="details.icon || 'help'"
                                               :items="$dayspan.icons"
                                               :disabled="isReadOnly"
-                                              v-model="details.icon">
+                                              v-model="details.icon"
+                                              v-on:change="onChangeIcon">
                                         <template slot="item" slot-scope="{ item }">
                                             <v-list-item-avatar>
                                                 <v-icon>{{ item.value }}</v-icon>
@@ -287,7 +285,7 @@
 </template>
 
 <script>
-import { Day, Calendar, CalendarEvent, Schedule, Functions as fn } from 'custom-dayspan'
+import { Day, Calendar, CalendarEvent, Time, Schedule, Functions as fn } from 'custom-dayspan'
 
 export default {
 
@@ -421,7 +419,7 @@ export default {
 
     data: vm => ({
         tab: 'details',
-        schedule: new Schedule(),
+        schedule: vm.$dayspan.getDefaultEventSchedule(),
         details: vm.$dayspan.getDefaultEventDetails()
     }),
 
@@ -430,13 +428,15 @@ export default {
             targetSchedule:
                 {
                     handler: 'updateSchedule',
-                    immediate: true
+                    immediate: true,
+                    deep: true
                 },
 
             targetDetails:
                 {
                     handler: 'updateDetails',
-                    immediate: true
+                    immediate: true,
+                    deep: true
                 }
         },
 
@@ -511,6 +511,38 @@ export default {
 
     methods:
         {
+            onChangeIcon (){
+              switch (this.details.icon) {
+                case 'virus':
+                    this.schedule.durationUnit = "hour"
+                    this.schedule.duration = 1
+                    this.schedule.times = [Time.parse("01:00")]
+                    this.details.color = "#F44336"
+                    this.targetDetails.color = "#F44336"
+                    break
+                case 'bacteria':
+                    this.schedule.durationUnit = "hour"
+                    this.schedule.duration = 4
+                    this.schedule.times = [Time.parse("01:00")]
+                    this.details.color = "#607D8B"
+                    this.targetDetails.color = "#607D8B"
+                    break
+                case 'continu_virus':
+                    this.schedule.durationUnit = "day"
+                    this.schedule.duration = 1
+                    this.schedule.times = []
+                    this.details.color = "#FFEB3B"
+                    this.targetDetails.color = "#FFEB3B"
+                    break
+                case 'continu_bacteria':
+                    this.schedule.durationUnit = "day"
+                    this.schedule.duration = 1
+                    this.schedule.times = []
+                    this.details.color = "#00BCD4"
+                    this.targetDetails.color = "#00BCD4"
+                    break
+              }
+            },
             save () {
                 var ev = this.getEvent('save')
 

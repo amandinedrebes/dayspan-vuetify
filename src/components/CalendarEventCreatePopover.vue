@@ -152,7 +152,8 @@
 
                 <v-list-item v-if="prompts.icon && $dayspan.supports.icon">
                     <v-list-item-avatar>
-                        <v-icon>{{ details.icon || 'help' }}</v-icon>
+                        <!-- <v-icon>{{ details.icon || 'help' }}</v-icon> -->
+                         <v-icon>coronavirus</v-icon>
                     </v-list-item-avatar>
                     <v-list-item-content class="py-0">
                         <slot name="eventCreatePopoverIcon" v-bind="slotData">
@@ -344,15 +345,27 @@ export default {
             onChangeIcon (){
               switch (this.details.icon) {
                 case 'virus':
+                    this.calendarEvent.schedule.durationUnit = "hour"
+                    this.calendarEvent.schedule.duration = 1
+                    this.calendarEvent.schedule.times = [1]
                     this.details.color = "#F44336"
                     break
                 case 'bacteria':
+                    this.calendarEvent.schedule.durationUnit = "hour"
+                    this.calendarEvent.schedule.duration = 4
+                    this.calendarEvent.schedule.times = [1]
                     this.details.color = "#607D8B"
                     break
                 case 'continu_virus':
+                    this.calendarEvent.schedule.durationUnit = "day"
+                    this.calendarEvent.schedule.duration = 1
+                    this.calendarEvent.schedule.times = []
                     this.details.color = "#FFEB3B"
                     break
                 case 'continu_bacteria':
+                    this.calendarEvent.schedule.durationUnit = "day"
+                    this.calendarEvent.schedule.duration = 1
+                    this.calendarEvent.schedule.times = []
                     this.details.color = "#00BCD4"
                     break
               }
