@@ -3,7 +3,7 @@
     <div class="ds-time-row">
 
         <div class="ds-time-cell">
-
+            <span v-html="titles.start"></span>
             <v-text-field
                     single-line hide-details solo flat
                     type="time"
@@ -109,6 +109,16 @@ export default {
                     },
                     default () {
                         return this.$dsDefaults().labels
+                    }
+                },
+
+            titles:
+                {
+                    validate (x) {
+                        return this.$dsValidate(x, 'titles')
+                    },
+                    default () {
+                        return this.$dsDefaults().titles
                     }
                 },
 

@@ -1,6 +1,8 @@
 <template>
     <div class="ds-schedule-times">
 
+        <span v-html="titles.duration"></span>
+
         <div class="ds-time-row">
 
             <div class="ds-time-cell">
@@ -97,6 +99,17 @@ export default {
                     },
                     default () {
                         return this.$dsDefaults().labels
+                    }
+                },
+
+
+            titles:
+                {
+                    validate (x) {
+                        return this.$dsValidate(x, 'titles')
+                    },
+                    default () {
+                        return this.$dsDefaults().titles
                     }
                 },
 

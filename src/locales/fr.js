@@ -315,6 +315,9 @@ export default {
             labels: {
                 remove: 'Enlever le temps',
                 add: 'Ajouter un temps'
+            },
+            titles: {
+                start: 'Début du cycle'
             }
         },
 
@@ -333,6 +336,9 @@ export default {
                 seconds: 'secondes',
                 month: 'mois',
                 months: 'mois'
+            },
+            titles: {
+                duration: 'Durée du cycle'
             }
         },
 

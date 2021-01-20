@@ -315,6 +315,9 @@ export default {
             labels: {
                 remove: 'Remove time',
                 add: 'Add time'
+            },
+            titles: {
+                start: 'Cycle start'
             }
         },
 
@@ -333,6 +336,9 @@ export default {
                 months: 'months',
                 second: 'second',
                 seconds: 'seconds'
+            },
+            titles: {
+                duration: 'Cycle duration'
             }
         },
 

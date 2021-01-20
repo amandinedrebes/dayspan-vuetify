@@ -481,6 +481,9 @@ export default {
             remove: LOCALE_ENTRY,
             add: LOCALE_ENTRY
         },
+        titles: {
+            start: LOCALE_ENTRY
+        },
         colors: {
             add: 'secondary',
             remove: 'secondary'
@@ -507,6 +510,9 @@ export default {
             months: LOCALE_ENTRY,
             second: LOCALE_ENTRY,
             seconds: LOCALE_ENTRY
+        },
+        titles: {
+            duration: LOCALE_ENTRY
         }
     },
 
